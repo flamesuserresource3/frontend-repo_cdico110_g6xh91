@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Spline from '@splinetool/react-spline'
 
 function SectionHeader({ title, subtitle }) {
   return (
@@ -13,37 +14,33 @@ function SectionHeader({ title, subtitle }) {
 
 function Hero() {
   return (
-    <section className="bg-white">
-      <div className="max-w-6xl mx-auto px-4 pt-14 pb-10 md:pt-20 md:pb-16 text-center">
-        <h1 className="text-3xl md:text-5xl font-semibold leading-tight tracking-tight text-black">
-          AI Automation for Modern Dental Clinics
-        </h1>
-        <p className="mt-4 text-black/80 max-w-3xl mx-auto text-sm md:text-lg">
-          Velodent streamlines front-desk ops, patient onboarding, and recall systems using safe, compliant AI.
-        </p>
-        <div className="mt-6 flex items-center justify-center gap-3">
-          <a
-            href="https://cal.com/velodent-ogbkfv/20min"
-            target="_blank"
-            rel="noreferrer"
-            className="px-5 py-3 rounded-full border border-black bg-black text-white hover:bg-white hover:text-black transition-colors text-sm"
-          >
-            Book Now
-          </a>
-        </div>
-        <div className="mt-8 md:mt-12 flex justify-center">
-          <div className="w-full md:w-[860px] aspect-video border border-black/10 rounded-xl overflow-hidden shadow-sm">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/Nw478YoO3og?si=0Pcoc1145T6JDndl"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="w-full h-full"
-            />
+    <section className="relative bg-white">
+      <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
+        <Spline
+          scene="https://prod.spline.design/Qe6dlWJktclXcUBS/scene.splinecode"
+          style={{ width: '100%', height: '100%' }}
+        />
+        {/* subtle gradient overlay for contrast, does not block interactions */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/60 via-white/10 to-white"></div>
+        {/* content */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="px-4 text-center">
+            <h1 className="text-3xl md:text-5xl font-semibold leading-tight tracking-tight text-black">
+              AI Automation for Modern Dental Clinics
+            </h1>
+            <p className="mt-4 text-black/80 max-w-3xl mx-auto text-sm md:text-lg">
+              Velodent streamlines front-desk ops, patient onboarding, and recall systems using safe, compliant AI.
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <a
+                href="https://cal.com/velodent-ogbkfv/20min"
+                target="_blank"
+                rel="noreferrer"
+                className="pointer-events-auto px-5 py-3 rounded-full border border-black bg-black text-white hover:bg-white hover:text-black transition-colors text-sm"
+              >
+                Book Now
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -208,7 +205,7 @@ function FAQ() {
       <div className="max-w-6xl mx-auto px-4">
         <SectionHeader title="Frequently Asked Questions" />
         <div className="divide-y divide-black/10 border border-black/10 rounded-xl overflow-hidden">
-          {faqs.map((f, idx) => (
+          {faqs.map((f) => (
             <details key={f.q} className="group open:bg-black/5">
               <summary className="list-none cursor-pointer select-none px-5 md:px-6 py-4 md:py-5 flex items-center justify-between">
                 <span className="text-black font-medium mr-4">{f.q}</span>
