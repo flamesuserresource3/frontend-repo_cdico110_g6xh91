@@ -17,7 +17,7 @@ function Hero() {
     <section className="relative bg-white">
       <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
         <Spline
-          scene="https://prod.spline.design/Qe6dlWJktclXcUBS/scene.splinecode"
+          scene="https://prod.spline.design/hGDm7Foxug7C6E8s/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
         {/* subtle gradient overlay for contrast, does not block interactions */}
